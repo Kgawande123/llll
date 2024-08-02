@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+{% block title %}
+    <title>Show</title>
+{% endblock %}
+{% block content %}
+
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th>Cid</th>
+            <th>C_name</th>
+            <th>C_Phoneno</th>
+            <th>Numberplate_no</th>
+            <th>Date_From</th>
+            <th>Date_To</th>
+            <th>Rate</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for i in obj %}
+        <tr>
+            <td>{{i.cid}}</td>
+            <td>{{i.c_name}}</td>
+            <td>{{i.c_no}}</td>
+            <td>{{i.numberplate}}</td>
+            <td>{{i.datefrom}}</td>
+            <td>{{i.dateto}}</td>
+            <td>{{i.rate}}</td>
+            <td>{{i.gender}}</td>
+            <td>
+                <a href="/a1/uv/{{i.cid}}/"><button class="btn btn-success">Update</button></a>
+                <a href="/a1/dv/{{i.cid}}/"><button class="btn btn-danger">Delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+{% endblock %}
